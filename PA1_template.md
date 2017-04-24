@@ -60,7 +60,7 @@ TotalStepsPerDay <- with(activity, tapply(steps, date, sum, na.rm=TRUE))
 
 
 ```r
-hist(TotalStepsPerDay, breaks=50, density=20, main="Total number of steps taken each day", xlab="Steps")
+hist(TotalStepsPerDay, density=20, main="Total number of steps taken each day", xlab="Steps")
 rug(TotalStepsPerDay)
 ```
 
@@ -203,7 +203,7 @@ head(tidy.activity)
 
 ```r
 TotalStepsPerDay2 <- with(tidy.activity, tapply(steps, date, sum, na.rm=TRUE))
-hist(TotalStepsPerDay2, breaks=50, density=20, main="Total number of steps taken each day (without missing values)", xlab="Steps")
+hist(TotalStepsPerDay2, density=20, main="Total number of steps taken each day (without missing values)", xlab="Steps")
 rug(TotalStepsPerDay2)
 ```
 

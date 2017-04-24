@@ -40,7 +40,7 @@ TotalStepsPerDay <- with(activity, tapply(steps, date, sum, na.rm=TRUE))
 * Then we make a histogram of the total number of steps taken each day
 
 ```{r plot total steps per day}
-hist(TotalStepsPerDay, breaks=50, density=20, main="Total number of steps taken each day", xlab="Steps")
+hist(TotalStepsPerDay, density=20, main="Total number of steps taken each day", xlab="Steps")
 rug(TotalStepsPerDay)
 ```
 
@@ -114,7 +114,7 @@ head(tidy.activity)
 
 ```{r total steps per day without missing values}
 TotalStepsPerDay2 <- with(tidy.activity, tapply(steps, date, sum, na.rm=TRUE))
-hist(TotalStepsPerDay2, breaks=50, density=20, main="Total number of steps taken each day (without missing values)", xlab="Steps")
+hist(TotalStepsPerDay2, density=20, main="Total number of steps taken each day (without missing values)", xlab="Steps")
 rug(TotalStepsPerDay2)
 ```
 
