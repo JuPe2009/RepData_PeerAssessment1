@@ -203,14 +203,14 @@ hr {
 <body>
 <h2>Loading and preprocessing data</h2>
 
-<p>We set the working directory for knitr <strong>&ldquo;~/Reproducible Research&rdquo;</strong> and we download there the dataset</p>
+<p>We put the file <strong>activity.zip</strong> in the working directory, we unzip it and we read the csv file.</p>
 
 <pre><code class="r">if (file.exists(&quot;activity.zip&quot;)) { unzip(&quot;activity.zip&quot;) }
 if (file.exists(&quot;activity.csv&quot;)) 
 { 
         activity &lt;- read.csv(&quot;activity.csv&quot;) 
 }
-unlink(&quot;./activity.csv&quot;)
+unlink(&quot;activity.csv&quot;)
 activity &lt;- transform(activity, date = as.Date(date, &quot;%Y-%m-%d&quot;))
 str(activity)
 </code></pre>

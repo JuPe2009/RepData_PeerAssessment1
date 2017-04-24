@@ -11,7 +11,7 @@ output:
 
 ## Loading and preprocessing data
 
-We set the working directory for knitr **"~/Reproducible Research"** and we download there the dataset
+We put the file **activity.zip** in the working directory, we unzip it and we read the csv file.
 
 
 ```r
@@ -20,7 +20,7 @@ if (file.exists("activity.csv"))
 { 
         activity <- read.csv("activity.csv") 
 }
-unlink("./activity.csv")
+unlink("activity.csv")
 activity <- transform(activity, date = as.Date(date, "%Y-%m-%d"))
 str(activity)
 ```
