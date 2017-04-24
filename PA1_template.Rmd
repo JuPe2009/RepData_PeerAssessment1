@@ -4,7 +4,6 @@ author: "Juan Pedro Martín"
 date: "23 April 2017"
 output: 
   html_document: 
-    fig_caption: yes
     keep_md: yes
 ---
 
