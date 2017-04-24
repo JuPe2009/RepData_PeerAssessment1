@@ -4,7 +4,6 @@ author: "Juan Pedro Martín"
 date: "23 April 2017"
 output: 
   html_document: 
-    fig_caption: yes
     keep_md: yes
 ---
 
@@ -16,10 +15,10 @@ We set the working directory for knitr **"~/Reproducible Research"** and we down
 
 
 ```r
-if (file.exists("./activity.zip")) { unzip("./activity.zip") }
-if (file.exists("./activity.csv")) 
+if (file.exists("activity.zip")) { unzip("activity.zip") }
+if (file.exists("activity.csv")) 
 { 
-        activity <- read.csv("./activity.csv") 
+        activity <- read.csv("activity.csv") 
 }
 unlink("./activity.csv")
 activity <- transform(activity, date = as.Date(date, "%Y-%m-%d"))
@@ -64,7 +63,7 @@ hist(TotalStepsPerDay, density=20, main="Total number of steps taken each day", 
 rug(TotalStepsPerDay)
 ```
 
-![plot of chunk plot total steps per day](figure/plot total steps per day-1.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png)
 
 * And we calculate the **mean** and **median** of the total number of steps taken per day
 
@@ -104,7 +103,7 @@ Average.AllDays <- aggregate(steps~interval, data=activity, FUN=mean)
 plot(Average.AllDays, type="l", ylab="Average number of steps taken across all days", xlab="5-minute interval")
 ```
 
-![plot of chunk time series plot](figure/time series plot-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 * Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -207,7 +206,7 @@ hist(TotalStepsPerDay2, density=20, main="Total number of steps taken each day (
 rug(TotalStepsPerDay2)
 ```
 
-![plot of chunk total steps per day without missing values](figure/total steps per day without missing values-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 * Calculate mean and median total number of steps taken per day
 
@@ -288,6 +287,6 @@ xyplot(AveragePerDayType$steps ~ AveragePerDayType$interval | AveragePerDayType$
        xlab="5-minute interval")
 ```
 
-![plot of chunk panel plot](figure/panel plot-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 * We can see in above plot the different activity patterns for normal weekdays and weekend days.
