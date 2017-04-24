@@ -63,7 +63,7 @@ hist(TotalStepsPerDay, density=20, main="Total number of steps taken each day", 
 rug(TotalStepsPerDay)
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png)
+![plot of chunk histogram-total-number-of-steps-1](figure/histogram-total-number-of-steps-1-1.png)
 
 * And we calculate the **mean** and **median** of the total number of steps taken per day
 
@@ -103,7 +103,7 @@ Average.AllDays <- aggregate(steps~interval, data=activity, FUN=mean)
 plot(Average.AllDays, type="l", ylab="Average number of steps taken across all days", xlab="5-minute interval")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![plot of chunk time-series-plot](figure/time-series-plot-1.png)
 
 * Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -206,7 +206,7 @@ hist(TotalStepsPerDay2, density=20, main="Total number of steps taken each day (
 rug(TotalStepsPerDay2)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![plot of chunk histogram-total-number-of-steps-2](figure/histogram-total-number-of-steps-2-1.png)
 
 * Calculate mean and median total number of steps taken per day
 
@@ -287,6 +287,6 @@ xyplot(AveragePerDayType$steps ~ AveragePerDayType$interval | AveragePerDayType$
        xlab="5-minute interval")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk panel-plot](figure/panel-plot-1.png)
 
 * We can see in above plot the different activity patterns for normal weekdays and weekend days.

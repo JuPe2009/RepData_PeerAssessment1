@@ -37,7 +37,7 @@ TotalStepsPerDay <- with(activity, tapply(steps, date, sum, na.rm=TRUE))
 
 * Then we make a histogram of the total number of steps taken each day
 
-```{r}
+```{r histogram-total-number-of-steps-1}
 hist(TotalStepsPerDay, density=20, main="Total number of steps taken each day", xlab="Steps")
 rug(TotalStepsPerDay)
 ```
@@ -54,7 +54,7 @@ median(TotalStepsPerDay)
 
 * Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r}
+```{r time-series-plot}
 Average.AllDays <- aggregate(steps~interval, data=activity, FUN=mean)
 plot(Average.AllDays, type="l", ylab="Average number of steps taken across all days", xlab="5-minute interval")
 ```
@@ -110,7 +110,7 @@ head(tidy.activity)
 
 * Make a histogram of the total number of steps taken each day and calculate and report the **mean** and **median** total number of steps taken per day. 
 
-```{r}
+```{r histogram-total-number-of-steps-2}
 TotalStepsPerDay2 <- with(tidy.activity, tapply(steps, date, sum, na.rm=TRUE))
 hist(TotalStepsPerDay2, density=20, main="Total number of steps taken each day (without missing values)", xlab="Steps")
 rug(TotalStepsPerDay2)
@@ -148,7 +148,7 @@ tidy.activity$weekday <- as.factor(tidy.activity$weekday)
 
 * Make a panel plot containing a time series plot (i.e.**type = "l"**) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
-```{r}
+```{r panel-plot}
 # Aggregate data per interval and weekend logical variable
 AveragePerDayType <- aggregate(steps~interval+weekday, data=tidy.activity, FUN=mean)
 # Plot panel with lattice to look like the sample plot
